@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block main %}
+<div class="col-md-6">
+    <h4>用户注册</h4>
+    <form role="form" method="post" action="/regist">
+        <div class="form-group">
+            <label for="userphone">手机号:</label>
+            <input id="userphone" type="text" placeholder="请输入手机号" name="userphone" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="username">用户名:</label>
+            <input id="username" type="text" placeholder="请输入用户名" name="username" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="password">密码:</label>
+            <input id="password" type="password" placeholder="请输入密码" name="password" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="提交" class="btn btn-success" />
+        </div>
+    </form>
+</div>
+{% endblock %}
