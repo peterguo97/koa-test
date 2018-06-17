@@ -1,5 +1,6 @@
 const User = require('../model/student');
 const crypto = require('crypto');
+const secret = 'just to try';
 
 let login = async function (ctx,next) {
     
@@ -29,7 +30,9 @@ let userlogin = async function (ctx,next) {
         let userpass = getPassword(request.pass);
         request.pass = '';
         if(result.pass === userpass){
-            ctx.response.body = `<h1>hello,${result.name}</h1>`;
+            ctx.session.user = id;
+            console.log(ctx.session);
+            ctx.redirect('/hello/petter');
         }
         else{
             ctx.response.body = `<h1>密码错误</h1>`
